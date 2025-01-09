@@ -9,17 +9,20 @@
 
   const qr = quotasRunes();
 
-  let data: Quota[] = $state([]);
+  // let data: Quota[] = $state([]);
+
+  let data: Quota[] = $derived.by(() => {
+    if (qr.searchTerm) {
+      return qr.filteredQuotas;
+    } else {
+      return qr.quotas;
+    }
+  });
 
   $effect(() => {
     setTimeout(() => {
       if (tableData) qr.quotas = tableData;
     }, 3000);
-    if (qr.searchTerm) {
-      data = qr.filteredQuotas;
-    } else {
-      data = qr.quotas;
-    }
   });
 </script>
 

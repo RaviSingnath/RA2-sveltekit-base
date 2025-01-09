@@ -9,7 +9,7 @@
   let { id, label, checked = false, toggleAllQuota }: Props = $props();
 </script>
 
-<div class="mt-6 flex gap-3">
+<div class="flex gap-3">
   <div class="flex h-5 shrink-0 items-center">
     <div class="group grid size-4 grid-cols-1">
       <input

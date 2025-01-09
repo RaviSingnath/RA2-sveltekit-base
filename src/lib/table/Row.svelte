@@ -20,10 +20,6 @@
   let error: { [key: string]: string } = $state({});
   let loading = $state(false);
 
-  $inspect(typeof quotaEnabled, quotaEnabled, typeof quotaLimit, quotaLimit);
-
-  $inspect(quotaLimit);
-
   const quotas = quotasRunes();
 
   const onToggleSingleQuota = (quota: Quota) => quotas.toggleSingleQuota(quota);
