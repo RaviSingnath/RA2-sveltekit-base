@@ -1,11 +1,11 @@
 <script module>
-  import { defineMeta } from '@storybook/addon-svelte-csf';
-  import ExampleTable from '$lib/ExampleTable.svelte';
-  
+  import { defineMeta } from "@storybook/addon-svelte-csf";
+  import ExampleTable from "$lib/table/ExampleTable.svelte";
+
   const { Story } = defineMeta({
-    title: 'Example Table',
+    title: "Example Table",
     component: ExampleTable,
-    tags: ['autodocs'],
+    tags: ["autodocs"],
   });
 </script>
 

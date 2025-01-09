@@ -42,6 +42,7 @@
     "storybook": "^8.4.7",
     "svelte": "^5.0.0",
     "svelte-check": "^4.0.0",
+    "svelte-heros-v2": "^2.0.1",
     "tailwindcss": "^3.4.9",
     "typescript": "^5.0.0",
     "typescript-eslint": "^8.0.0",
@@ -51,6 +52,8 @@
   "dependencies": {
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/forms": "^0.5.9",
-    "@tailwindcss/typography": "^0.5.15"
+    "@tailwindcss/typography": "^0.5.15",
+    "svelte-5-french-toast": "^2.0.1",
+    "zod": "^3.24.1"
   }
 }

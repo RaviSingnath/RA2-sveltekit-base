@@ -1,14 +1,16 @@
 [
   {
-      "name": "EXMPu30_W_8888M_010",
+      
+      "name": "ravi",
       "limit": 2,
       "is_enabled": true,
       "project_id": "02eb70ef-0a1e-4fa7-8efd-7223de374277",
       "id": "91808402-4577-4cae-a135-43d6d0bc1405"
   },
   {
-      "name": "EXMPu30_W_8888M_009",
-      "limit": 2,
+      
+      "name": "verma",
+      "limit": 9,
       "is_enabled": false,
       "project_id": "02eb70ef-0a1e-4fa7-8efd-7223de374277",
       "id": "b8bd38f5-4329-4560-8c27-4b7736fa3a9d"
@@ -22,35 +24,35 @@
   },
   {
       "name": "EXMPu30_W_8888M_007",
-      "limit": 2,
+      "limit": 1,
       "is_enabled": true,
       "project_id": "02eb70ef-0a1e-4fa7-8efd-7223de374277",
       "id": "3fb4365b-d219-4863-b524-bbf47efad099"
   },
   {
       "name": "EXMPu30_W_8888M_006",
-      "limit": 2,
+      "limit": 4,
       "is_enabled": true,
       "project_id": "02eb70ef-0a1e-4fa7-8efd-7223de374277",
       "id": "d8f6c930-ec1f-487d-a14a-d170e9d237c9"
   },
   {
       "name": "EXMPu30_W_8888M_005",
-      "limit": 2,
+      "limit": 3,
       "is_enabled": true,
       "project_id": "02eb70ef-0a1e-4fa7-8efd-7223de374277",
       "id": "90532d49-da9d-439e-8783-79f52b22f634"
   },
   {
       "name": "EXMPu30_W_8888M_004",
-      "limit": 2,
+      "limit": 8,
       "is_enabled": true,
       "project_id": "02eb70ef-0a1e-4fa7-8efd-7223de374277",
       "id": "69185191-bf96-44b5-9a6c-4da898de62f1"
   },
   {
       "name": "EXMPu30_W_8888M_003",
-      "limit": 2,
+      "limit": 9,
       "is_enabled": true,
       "project_id": "02eb70ef-0a1e-4fa7-8efd-7223de374277",
       "id": "18269860-db2f-4832-8954-e06343f4c45b"
