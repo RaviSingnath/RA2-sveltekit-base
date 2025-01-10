@@ -20,22 +20,18 @@ export function quotasRunes() {
 
     get selectedQuotaItems() { return selectedQuotaItems },
 
-    set sortDirection(str: string) { sortDirection = str },
-
-		get count() { return quotas.length },
-
     get showBar() { return showBar },
 
     get filteredQuotas() {
       return filteredQuotass
     },
 
-    set searchTerm(s: string) {
-      searchTerm = s;
-    },
-
     get searchTerm() {
       return searchTerm;
+    },
+
+    set searchTerm(s: string) {
+      searchTerm = s;
     },
 
 		toggleSingleQuota: (quota: Quota) => {
@@ -65,6 +61,9 @@ export function quotasRunes() {
     deselectQuotas: () => selectedQuotaItems = [],
 
     sortQuotas: (sortCriteria: string) => {
+      if (sortDirection === "asce") sortDirection = "desc";
+      else sortDirection = "asce";
+
       const sorted = [ ...quotas ];
       quotas = sorted.slice().sort((a, b) => {
         let compA, compB;

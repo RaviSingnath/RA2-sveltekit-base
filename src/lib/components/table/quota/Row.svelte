@@ -1,16 +1,13 @@
 <script lang="ts">
-  import { XCircle, ArrowPath } from "svelte-heros-v2";
   import toast from "svelte-5-french-toast";
   import { invalidateAll } from "$app/navigation";
   import { enhance, applyAction } from "$app/forms";
-  import validate from "$lib/utils/validate";
   import type { SubmitFunction } from "@sveltejs/kit";
+  import { XCircle, ArrowPath } from "svelte-heros-v2";
+  import validate from "$lib/utils/validate";
+  import { quotasRunes } from "$lib/runes/quotasRunes.svelte";
   import { quotaSchema } from "$lib/validate-schema/quotaSchema";
-  import Select from "$lib/form-input/Select.svelte";
-  import Checkbox from "$lib/table/RowCheckbox.svelte";
-  import InputNumber from "$lib/form-input/InputNumber.svelte";
-  import { quotasRunes } from "../../data/runes/quotasRunes.svelte";
-  import { number } from "zod";
+  import { Select, RowCheckbox, InputNumber } from "$lib/components/input";
 
   let { quota }: { quota: Quota } = $props();
 
@@ -92,7 +89,7 @@
     <div
       class="col-span-3 flex items-center gap-3 whitespace-nowrap py-2 pl-4 pr-3 text-sm text-gray-500"
     >
-      <Checkbox
+      <RowCheckbox
         {quota}
         id={quota.id}
         label={quota.name}

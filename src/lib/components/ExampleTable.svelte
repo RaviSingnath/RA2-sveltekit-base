@@ -1,15 +1,13 @@
 <script lang="ts">
-  import QuotaTable from "./QuotaTable.svelte";
-  import TableOptions from "$lib/TableOptions.svelte";
-  import SelectedRowBar from "$lib/SelectedRowBar.svelte";
-  import { quotasRunes } from "../../data/runes/quotasRunes.svelte";
+  import { quotasRunes } from "$lib/runes/quotasRunes.svelte";
+  import SelectedRowBar from "$lib/components/SelectedRowBar.svelte";
+  import QuotaTable from "$lib/components/table/quota/QuotaTable.svelte";
+  import TableOptions from "$lib/components/table/quota/TableOptions.svelte";
   import AnimateTable from "$lib/components/animate-pulse/AnimateTable.svelte";
 
   let { tableData }: { tableData: Quota[] } = $props();
 
   const qr = quotasRunes();
-
-  // let data: Quota[] = $state([]);
 
   let data: Quota[] = $derived.by(() => {
     if (qr.searchTerm) {
@@ -22,7 +20,7 @@
   $effect(() => {
     setTimeout(() => {
       if (tableData) qr.quotas = tableData;
-    }, 3000);
+    }, 2000);
   });
 </script>
 

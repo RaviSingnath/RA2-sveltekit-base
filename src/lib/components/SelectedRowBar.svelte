@@ -1,10 +1,10 @@
 <script lang="ts">
+  import { fly } from "svelte/transition";
+  import { cubicOut } from "svelte/easing";
   import toast from "svelte-5-french-toast";
   import { invalidateAll } from "$app/navigation";
   import { enhance, applyAction } from "$app/forms";
-  import validate from "$lib/utils/validate";
   import type { SubmitFunction } from "@sveltejs/kit";
-  import { bulkQuotaSchema } from "$lib/validate-schema/quotaSchema";
   import {
     XMark,
     XCircle,
@@ -12,11 +12,10 @@
     ArrowPath,
     CheckCircle,
   } from "svelte-heros-v2";
-  import { fly } from "svelte/transition";
-  import { cubicOut } from "svelte/easing";
-  import { quotasRunes } from "../data/runes/quotasRunes.svelte";
-  import InputNumber from "./form-input/InputNumber.svelte";
-  import Select from "./form-input/Select.svelte";
+  import validate from "$lib/utils/validate";
+  import { quotasRunes } from "$lib/runes/quotasRunes.svelte";
+  import { Select, InputNumber } from "$lib/components/input";
+  import { bulkQuotaSchema } from "$lib/validate-schema/quotaSchema";
 
   const quotassRunes = quotasRunes();
 

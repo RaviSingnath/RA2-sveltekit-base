@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ExampleTable from "$lib/table/ExampleTable.svelte";
+  import ExampleTable from "$lib/components/ExampleTable.svelte";
   import { Toaster } from "svelte-5-french-toast";
 
   const { data }: { data: { [key: string]: [] } } = $props();

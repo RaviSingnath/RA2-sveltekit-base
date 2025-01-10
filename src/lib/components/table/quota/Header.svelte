@@ -1,14 +1,11 @@
 <script lang="ts">
-  import CheckBox from "$lib/form-input/CheckBox.svelte";
-  import { quotasRunes } from "../../data/runes/quotasRunes.svelte";
   import { ArrowsUpDown } from "svelte-heros-v2";
+  import { Checkbox } from "$lib/components/input";
+  import { quotasRunes } from "$lib/runes/quotasRunes.svelte";
 
   const quotas = quotasRunes();
 
   const sortColumn = (field: string) => {
-    if (quotas.sortDirection === "asce") quotas.sortDirection = "desc";
-    else quotas.sortDirection = "asce";
-
     quotas.sortQuotas(field);
   };
 </script>
@@ -19,7 +16,7 @@
   <div
     class="col-span-3 flex items-center gap-3 bg-white/75 py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter"
   >
-    <CheckBox
+    <Checkbox
       label="Name"
       id="all-quotas"
       checked={quotas.quotas.length === quotas.selectedQuotaItems.length}
