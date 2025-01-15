@@ -1,6 +1,6 @@
 <script module>
   import { defineMeta } from "@storybook/addon-svelte-csf";
-  import ExampleTable from "$lib/table/ExampleTable.svelte";
+  import ExampleTable from "$lib/components/ExampleTable.svelte";
 
   const { Story } = defineMeta({
     title: "Example Table",

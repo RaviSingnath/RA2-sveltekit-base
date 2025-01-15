@@ -11,10 +11,10 @@
 </script>
 
 <header
-  class="sticky left-0 top-0 grid w-full grid-cols-6 gap-4 border-b border-gray-300"
+  class="sticky left-0 top-0 grid w-full grid-cols-[1fr_1fr_1fr] gap-4 overflow-auto border-b border-gray-300 bg-white md:grid-cols-[35%_1fr_1fr_1fr]"
 >
   <div
-    class="col-span-3 flex items-center gap-3 bg-white/75 py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter"
+    class="flex items-center gap-3 py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900"
   >
     <Checkbox
       label="Name"
@@ -28,10 +28,8 @@
       onclick={() => sortColumn("name")}
     />
   </div>
-  <div
-    class="col-span-1 grid grid-cols-4 bg-white/75 py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter"
-  >
-    <div class="col-span-2 flex items-center gap-3">
+  <div class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900">
+    <div class="flex items-center gap-3">
       Status <ArrowsUpDown
         size="20"
         class="cursor-pointer"
@@ -39,10 +37,8 @@
       />
     </div>
   </div>
-  <div
-    class="col-span-1 grid grid-cols-4 bg-white/75 py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter"
-  >
-    <div class="col-span-2 flex items-center gap-3">
+  <div class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900">
+    <div class="flex items-center gap-3">
       Limit<ArrowsUpDown
         size="20"
         class="cursor-pointer"
@@ -51,8 +47,8 @@
     </div>
   </div>
   <div
-    class="col-span-1 grid grid-cols-4 bg-white/75 py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 backdrop-blur backdrop-filter"
+    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 max-sm:hidden"
   >
-    <div class="col-span-2 self-center"></div>
+    <div class="self-center"></div>
   </div>
 </header>

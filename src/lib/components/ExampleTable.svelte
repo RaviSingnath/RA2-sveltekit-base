@@ -24,20 +24,19 @@
   });
 </script>
 
-<div class="overflow-hidden rounded-lg bg-white shadow">
+<div class="rounded-lg bg-white shadow">
   <div>
     <TableOptions />
-    <div class="overflow-y-auto">
-      <div class="flow-root px-4 sm:px-6 lg:px-8">
-        <div class="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
-          <div class="relative inline-block min-w-full py-2 align-middle">
-            {#if data.length > 0}
-              <QuotaTable items={data} />
-            {:else}
-              <AnimateTable />
-            {/if}
-            <SelectedRowBar />
-          </div>
+
+    <div class="flow-root px-4 sm:px-6 lg:px-8">
+      <div class="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
+        <div class="relative block min-w-full py-2 align-middle">
+          {#if data.length > 0}
+            <QuotaTable items={data} />
+          {:else}
+            <AnimateTable />
+          {/if}
+          <SelectedRowBar />
         </div>
       </div>
     </div>

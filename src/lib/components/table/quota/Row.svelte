@@ -78,91 +78,90 @@
   };
 </script>
 
-<form method="POST" action="?/updateQuota" use:enhance={updateItem}>
+<form
+  method="POST"
+  action="?/updateQuota"
+  use:enhance={updateItem}
+  class="grid grid-cols-[70%] justify-center gap-2 py-2 pl-4 pr-3 md:grid-cols-[40%_1fr_1fr_1fr] md:gap-4 {quota.id} {itemSelected
+    ? 'bg-gray-100'
+    : 'bg-white'}"
+>
   <input type="hidden" name="quota_id" value={quota.id} />
   <input type="hidden" name="name" value={quota.name} />
+
   <div
-    class="grid grid-cols-6 gap-4 {quota.id} {itemSelected
-      ? 'bg-gray-100'
-      : 'bg-white'}"
+    class="flex items-center justify-center gap-3 text-sm text-gray-500 md:justify-start"
   >
-    <div
-      class="col-span-3 flex items-center gap-3 whitespace-nowrap py-2 pl-4 pr-3 text-sm text-gray-500"
-    >
-      <RowCheckbox
-        {quota}
-        id={quota.id}
-        label={quota.name}
-        checked={itemSelected}
-        disabled={editRow}
-        onCheckboxToggle={onToggleSingleQuota}
-      />
-    </div>
-    <div
-      class="col-span-1 flex items-center whitespace-nowrap py-2 pl-4 pr-3 text-sm font-medium text-gray-500"
-    >
-      {#if editRow}
-        <Select bind:selected={quotaEnabled} error={error?.is_enabled} />
-        <input type="hidden" name="is_enabled" value={quotaEnabled} />
-      {:else}
-        <span
-          class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium {quota.is_enabled
-            ? 'bg-green-100 text-green-800'
-            : 'bg-red-100 text-red-800'} "
-        >
-          {#if quota.is_enabled}
-            Enabled
-          {:else}
-            Disabled
-          {/if}
-        </span>
-      {/if}
-    </div>
-    <div
-      class="col-span-1 flex items-center whitespace-nowrap py-2 pl-4 pr-3 text-sm text-gray-500"
-    >
-      {#if editRow}
-        <InputNumber
-          error={error?.limit}
-          bind:value={quotaLimit}
-          name="limit"
-        />
-      {:else}
-        {quota.limit}
-      {/if}
-    </div>
-    <div
-      class="col-span-1 flex items-center whitespace-nowrap py-2 pl-4 pr-3 text-sm text-gray-500"
-    >
-      <div class="col-span-1 self-center">
-        {#if !itemSelected}
-          <div class="flex cursor-pointer items-center justify-start gap-2">
-            {#if editRow}
-              <button
-                type="submit"
-                onclick={(e) => e.stopPropagation()}
-                class="inline-flex items-center gap-x-1.5 rounded-md bg-eaGrey-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-eaGrey-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-eaGrey-600"
-              >
-                {#if loading}
-                  <ArrowPath class="animate-spin" size="20" />
-                {:else}
-                  Save
-                {/if}
-              </button>
-              <XCircle
-                variation="solid"
-                size="16"
-                class="text-red-600 hover:text-red-500"
-                onclick={() => (editRow = !editRow)}
-              />
+    <RowCheckbox
+      {quota}
+      id={quota.id}
+      label={quota.name}
+      checked={itemSelected}
+      disabled={editRow}
+      onCheckboxToggle={onToggleSingleQuota}
+    />
+  </div>
+  <div
+    class="flex items-center justify-center whitespace-nowrap text-sm font-medium text-gray-500 md:justify-start"
+  >
+    {#if editRow}
+      <Select bind:selected={quotaEnabled} error={error?.is_enabled} />
+      <input type="hidden" name="is_enabled" value={quotaEnabled} />
+    {:else}
+      <span
+        class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium {quota.is_enabled
+          ? 'bg-green-100 text-green-800'
+          : 'bg-red-100 text-red-800'} "
+      >
+        {#if quota.is_enabled}
+          Enabled
+        {:else}
+          Disabled
+        {/if}
+      </span>
+    {/if}
+  </div>
+  <div
+    class="flex items-center justify-center whitespace-nowrap text-sm text-gray-500 md:justify-start"
+  >
+    {#if editRow}
+      <InputNumber error={error?.limit} bind:value={quotaLimit} name="limit" />
+    {:else}
+      {quota.limit}
+    {/if}
+  </div>
+  <div
+    class="flex items-center justify-center whitespace-nowrap text-sm text-gray-500 md:justify-start"
+  >
+    {#if !itemSelected}
+      <div class="flex cursor-pointer items-center justify-start gap-2">
+        {#if editRow}
+          <button
+            type="submit"
+            onclick={(e) => e.stopPropagation()}
+            class="inline-flex items-center gap-x-1.5 rounded-md bg-eaGrey-600 px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-eaGrey-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-eaGrey-600"
+          >
+            {#if loading}
+              <ArrowPath class="animate-spin" size="20" />
             {:else}
-              <button class="p-2" onclick={() => (editRow = !editRow)}
-                >Edit</button
-              >
+              Save
             {/if}
-          </div>
+          </button>
+          <XCircle
+            variation="solid"
+            size="16"
+            class="text-red-600 hover:text-red-500"
+            onclick={() => (editRow = !editRow)}
+          />
+        {:else}
+          <button
+            type="button"
+            onclick={() => (editRow = !editRow)}
+            class="rounded-md bg-white px-3 py-2 text-sm font-semibold text-eaGrey-600 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+            >Edit</button
+          >
         {/if}
       </div>
-    </div>
+    {/if}
   </div>
 </form>

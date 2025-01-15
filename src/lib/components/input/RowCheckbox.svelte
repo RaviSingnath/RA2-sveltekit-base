@@ -55,7 +55,9 @@
         </div>
       </div>
       <div class="text-sm/6">
-        <label for={id} class="font-medium text-gray-900">{label}</label>
+        <label for={id} class="text-wrap font-medium text-gray-900"
+          >{label}</label
+        >
       </div>
     </div>
   </div>

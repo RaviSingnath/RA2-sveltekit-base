@@ -5,9 +5,13 @@
   const { items }: { items: Quota[] } = $props();
 </script>
 
-<div class="max-h-[600px] min-w-full overflow-y-auto">
+<div class="w-full">
   <Header />
-  {#each items as item (item.id)}
-    <Row quota={item} />
-  {/each}
+  <div
+    class="max-h-[600px] divide-y divide-blue-200 overflow-auto whitespace-nowrap max-md:space-y-2"
+  >
+    {#each items as item (item.id)}
+      <Row quota={item} />
+    {/each}
+  </div>
 </div>

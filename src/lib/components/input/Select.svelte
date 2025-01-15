@@ -32,7 +32,6 @@
   <div
     tabindex="0"
     role="button"
-    class="relative"
     onclick={onSelectToggle}
     onkeydown={onSelectToggle}
   >
