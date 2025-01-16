@@ -44,12 +44,11 @@ export function quotasRunes() {
       }
     },
 
-    toggleAllQuota: (e: Event) => {
-      const checked = (e.target as HTMLInputElement).checked;
+    toggleAllQuota: (checked: boolean) => {
       if (checked) {
         if(searchTerm){
           selectedQuotaItems = filteredQuotass
-        }else {
+        } else {
           selectedQuotaItems = quotas
         }
       }

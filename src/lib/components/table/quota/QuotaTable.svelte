@@ -10,8 +10,12 @@
   <div
     class="max-h-[600px] divide-y divide-blue-200 overflow-auto whitespace-nowrap max-md:space-y-2"
   >
-    {#each items as item (item.id)}
-      <Row quota={item} />
-    {/each}
+    {#if items.length > 0}
+      {#each items as item (item.id)}
+        <Row quota={item} />
+      {/each}
+    {:else}
+      <div class="p-5 text-base font-semibold">No data found</div>
+    {/if}
   </div>
 </div>

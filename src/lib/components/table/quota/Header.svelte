@@ -11,16 +11,16 @@
 </script>
 
 <header
-  class="sticky left-0 top-0 grid w-full grid-cols-[1fr_1fr_1fr] gap-4 overflow-auto border-b border-gray-300 bg-white md:grid-cols-[35%_1fr_1fr_1fr]"
+  class="sticky left-0 top-0 grid w-full grid-cols-[1fr_1fr_1fr] gap-4 overflow-auto border-b border-gray-300 bg-white md:grid-cols-[40%_1fr_1fr_1fr]"
 >
   <div
-    class="flex items-center gap-3 py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900"
+    class="flex items-center gap-3 px-3 py-5 text-left text-sm font-semibold text-gray-900"
   >
     <Checkbox
       label="Name"
       id="all-quotas"
       checked={quotas.quotas.length === quotas.selectedQuotaItems.length}
-      toggleAllQuota={(e) => quotas.toggleAllQuota(e)}
+      toggleAllQuota={(checked) => quotas.toggleAllQuota(checked)}
     />
     <ArrowsUpDown
       size="20"
@@ -28,7 +28,7 @@
       onclick={() => sortColumn("name")}
     />
   </div>
-  <div class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900">
+  <div class="px-3 py-5 text-left text-sm font-semibold text-gray-900">
     <div class="flex items-center gap-3">
       Status <ArrowsUpDown
         size="20"
@@ -37,7 +37,7 @@
       />
     </div>
   </div>
-  <div class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900">
+  <div class="px-3 py-5 text-left text-sm font-semibold text-gray-900">
     <div class="flex items-center gap-3">
       Limit<ArrowsUpDown
         size="20"
@@ -47,7 +47,7 @@
     </div>
   </div>
   <div
-    class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 max-sm:hidden"
+    class="px-3 py-5 text-left text-sm font-semibold text-gray-900 max-sm:hidden"
   >
     <div class="self-center"></div>
   </div>

@@ -15,8 +15,9 @@
       cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat.
     </p>
   </div>
-
-  <ExampleTable tableData={data.dummyData} />
+  <div class="mx-auto mt-10 max-w-screen-2xl text-center">
+    <ExampleTable tableData={data.dummyData} />
+  </div>
 </div>
 
 <Toaster />

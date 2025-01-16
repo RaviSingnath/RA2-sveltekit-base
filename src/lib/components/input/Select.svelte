@@ -32,6 +32,7 @@
   <div
     tabindex="0"
     role="button"
+    class="relative"
     onclick={onSelectToggle}
     onkeydown={onSelectToggle}
   >
@@ -76,7 +77,7 @@
       <ul
         class="{openUpside
           ? 'fixed bottom-[88px] w-fit'
-          : 'absolute w-full'}  mt-1 max-h-60 overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm"
+          : 'absolute w-full'} mt-1 max-h-60 min-w-min overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm"
         tabindex="-1"
         role="listbox"
         aria-labelledby="listbox-label"

@@ -82,7 +82,7 @@
   method="POST"
   action="?/updateQuota"
   use:enhance={updateItem}
-  class="grid grid-cols-[70%] justify-center gap-2 py-2 pl-4 pr-3 md:grid-cols-[40%_1fr_1fr_1fr] md:gap-4 {quota.id} {itemSelected
+  class="grid grid-cols-[70%] justify-center gap-2 px-3 py-2 md:grid-cols-[40%_1fr_1fr_1fr] md:gap-4 {quota.id} {itemSelected
     ? 'bg-gray-100'
     : 'bg-white'}"
 >
@@ -102,7 +102,7 @@
     />
   </div>
   <div
-    class="flex items-center justify-center whitespace-nowrap text-sm font-medium text-gray-500 md:justify-start"
+    class="flex items-center justify-center whitespace-nowrap px-3 text-sm font-medium text-gray-500 md:justify-start"
   >
     {#if editRow}
       <Select bind:selected={quotaEnabled} error={error?.is_enabled} />
@@ -122,7 +122,7 @@
     {/if}
   </div>
   <div
-    class="flex items-center justify-center whitespace-nowrap text-sm text-gray-500 md:justify-start"
+    class="flex items-center justify-center whitespace-nowrap px-3 text-sm text-gray-500 md:justify-start"
   >
     {#if editRow}
       <InputNumber error={error?.limit} bind:value={quotaLimit} name="limit" />
@@ -131,7 +131,7 @@
     {/if}
   </div>
   <div
-    class="flex items-center justify-center whitespace-nowrap text-sm text-gray-500 md:justify-start"
+    class="flex items-center justify-center whitespace-nowrap px-3 text-sm text-gray-500 md:justify-start"
   >
     {#if !itemSelected}
       <div class="flex cursor-pointer items-center justify-start gap-2">

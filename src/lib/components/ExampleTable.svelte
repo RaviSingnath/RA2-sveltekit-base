@@ -7,11 +7,13 @@
 
   let { tableData }: { tableData: Quota[] } = $props();
 
+  let dataLoading = $state(true);
+
   const qr = quotasRunes();
 
   let data: Quota[] = $derived.by(() => {
     if (qr.searchTerm) {
-      return qr.filteredQuotas;
+      return qr.filteredQuotas.length ? qr.filteredQuotas : [];
     } else {
       return qr.quotas;
     }
@@ -20,6 +22,7 @@
   $effect(() => {
     setTimeout(() => {
       if (tableData) qr.quotas = tableData;
+      dataLoading = false;
     }, 2000);
   });
 </script>
@@ -31,10 +34,10 @@
     <div class="flow-root px-4 sm:px-6 lg:px-8">
       <div class="-mx-4 -my-2 sm:-mx-6 lg:-mx-8">
         <div class="relative block min-w-full py-2 align-middle">
-          {#if data.length > 0}
-            <QuotaTable items={data} />
-          {:else}
+          {#if dataLoading}
             <AnimateTable />
+          {:else}
+            <QuotaTable items={data} />
           {/if}
           <SelectedRowBar />
         </div>
